@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+ <title>Maintenance Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header img {
+            max-width: 200px;
+        }
+        h1 {
+            color: #333;
+        }
+        .maintenance-info {
+            margin-bottom: 20px;
+        }
+        .maintenance-info p {
+            margin: 5px 0;
+        }
+        .maintenance-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .maintenance-table th, .maintenance-table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="../logo.png" alt="Company Logo"></img>
+            <h1>Maintenance Report</h1>
+        </div>
+        <div class="maintenance-info">
+            <p><strong>Maintenance Date:</strong> <span th:text="${fiche.maintenancedate}"></span></p>
+            <p><strong>Maintenance Duration:</strong> <span th:text="${fiche.duration}"></span> hours</p>
+            <p><strong>Maintenance Cost:</strong> $ <span th:text="${fiche.cost}"></span></p>
+            <p><strong>Employ Name:</strong> <span th:text="${fiche.employname}"></span></p>
+            <p><strong>Telephone:</strong> <span th:text="${fiche.tel}"></span></p>
+        </div>
+        <table class="maintenance-table">
+            <thead>
+                <tr>
+                    <th>Device Type</th>
+                    <th>Model</th>
+                    <th>Power</th>
+                    <th>Size</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="device : ${fiche.devices}">
+                    <td th:text="${device.devicetype}"></td>
+                    <td th:text="${device.model}"></td>
+                    <td th:text="${device.power}"></td>
+                    <td th:text="${device.size}"></td>
+                    <td th:text="${device.description}"></td>
+                    <td th:text="${device.status ? 'OK' : 'Needs Repair'}"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="footer">
+            <p>© 2024 Maintenance Report. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

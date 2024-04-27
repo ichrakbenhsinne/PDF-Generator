@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Ticket</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .ticket {
+            width: 300px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .info {
+            margin-bottom: 10px;
+        }
+        .info label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="ticket">
+        <h1>Parking Ticket</h1>
+        <div class="info">
+            <label>Reservation ID:</label>
+            <span th:text="${reservation.id}"></span>
+        </div>
+        <div class="info">
+            <label>Reservation State:</label>
+            <span th:text="${reservation.reservationState}"></span>
+        </div>
+        <div class="info">
+            <label>Owner ID:</label>
+            <span th:text="${reservation.owneridentifiant}"></span>
+        </div>
+        <div class="info">
+            <label>Enter Date:</label>
+            <span th:text="${#dates.format(reservation.enterdate, 'yyyy-MM-dd HH:mm')}"></span>
+        </div>
+        <div class="info">
+            <label>Exit Date:</label>
+            <span th:text="${#dates.format(reservation.exitdate, 'yyyy-MM-dd HH:mm')}"></span>
+        </div>
+        <div class="info">
+            <label>Payment State:</label>
+            <span th:text="${reservation.payementState ? 'Paid' : 'Unpaid'}"></span>
+        </div>
+
+       
+            <div class="info">
+                <label>Block Name:</label>
+                <span th:text="${placeInfo.blockname}"></span>
+                <br>
+                <label>Plate Licence:</label>
+                <span th:text="${placeInfo.matricule}"></span>
+                <br>
+                <label>Place Name:</label>
+                <span th:text="${placeInfo.placename}"></span>
+            </div>
+        </div>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Ticket</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .ticket {
+            width: 300px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .info {
+            margin-bottom: 10px;
+        }
+        .info label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="ticket">
+        <h1>Parking Ticket</h1>
+        <div class="info">
+            <label>Parking Name:</label>
+            <span id="parkingName">Parking XYZ</span>
+        </div>
+        <div class="info">
+            <label>Block Name:</label>
+            <span id="blockName">Block A</span>
+        </div>
+        <div class="info">
+            <label>Reservation Number:</label>
+            <span id="reservationNumber">123456</span>
+        </div>
+        <div class="info">
+            <label>Place Number:</label>
+            <span id="placeNumber">5</span>
+        </div>
+        <div class="info">
+            <label>Zone Code:</label>
+            <span id="zoneCode">A123</span>
+        </div>
+        <div class="info">
+            <label>Entry Time:</label>
+            <span id="entryTime">April 12, 2024, 10:00 AM</span>
+        </div>
+        <div class="info">
+            <label>Exit Time:</label>
+            <span id="exitTime">April 12, 2024, 6:00 PM</span>
+        </div>
+        <div class="info">
+            <label>Tariff:</label>
+            <span id="tariff">$10</span>
+        </div>
+        <div class="info">
+            <label>License Plate:</label>
+            <span id="licensePlate">1234 AB 56</span>
+        </div>
+        <div class="info">
+            <label>Ticket Code:</label>
+            <span id="ticketCode">ABC123</span>
+        </div>
+    </div>
+</body>
+</html>
+ 
